@@ -1,9 +1,9 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import { Image, StyleSheet, Platform, View } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import CalendarScreen from './calendar';
 
 export default function HomeScreen() {
   return (
@@ -16,14 +16,15 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Benvenuto!</ThemedText>
         <HelloWave />
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle">Passo 1: Prova</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
+          Modifica <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> per vedere i cambiamenti.
+          Premi{' '}
           <ThemedText type="defaultSemiBold">
             {Platform.select({
               ios: 'cmd + d',
@@ -31,22 +32,34 @@ export default function HomeScreen() {
               web: 'F12'
             })}
           </ThemedText>{' '}
-          to open developer tools.
+          per aprire gli strumenti di sviluppo.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText type="subtitle">Passo 2: Esplora</ThemedText>
         <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
+          Tocca la scheda "Esplora" per scoprire cosa è incluso in questa app di partenza.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+        <ThemedText type="subtitle">Passo 3: Calendario Eventi</ThemedText>
         <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
+          Visualizza e gestisci i tuoi eventi personali con la nostra funzione calendario.
+        </ThemedText>
+        <View style={styles.calendarContainer}>
+          <CalendarScreen />
+        </View>
+      </ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Passo 4: Ripristina progetto</ThemedText>
+        <ThemedText>
+          Quando sei pronto, esegui{' '}
+          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> per ottenere una nuova{' '}
+          <ThemedText type="defaultSemiBold">app</ThemedText> directory. Questo sposterà l'attuale{' '}
+          <ThemedText type="defaultSemiBold">app</ThemedText> in{' '}
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
@@ -70,5 +83,12 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  },
+  calendarContainer: {
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 10,
+    overflow: 'hidden',
   },
 });
