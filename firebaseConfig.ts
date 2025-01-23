@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
-  apiKey: "AIzaSyARja7BlOukccjL9YIpMFeGjqVvADa-A2Q",
-  authDomain: "testreactnativestudio.firebaseapp.com",
-  projectId: "testreactnativestudio",
-  storageBucket: "testreactnativestudio.firebasestorage.app",
-  messagingSenderId: "626494768463",
-  appId: "1:626494768463:web:07bcfa32b560b18770f13a",
-  measurementId: "G-QWM3E269EV"
+  apiKey: "your-api",
+  authDomain: "your-api",
+  projectId: "your-api",
+  storageBucket: "your-api",
+  messagingSenderId: "your-api",
+  appId: "your-api",
+  measurementId: "your-api"
 };
 
 // Inizializza Firebase solo se non è già inizializzato
